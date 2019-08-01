@@ -1,0 +1,1297 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jtv.com Automation Execution Reports</title>
+    <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+    <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+    <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/24cb10e/spark/css/style.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+
+
+		
+</style></head><script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="test-view bdd-report dark">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+<div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">Jtv.com Automation Execution Reports</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">Aug 1, 2019 01:52:20 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+                                    <li class="user-profile dropdown dropdown-animated scale-left">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-exclamation-circle"></i>
+                                        </a>
+                                        <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+                                            <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+	                                        <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
+	                                        
+	                                        
+	                                        
+	                                        
+	                                        <div class="dropdown-divider"></div>
+                                            <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+                                        </ul>
+                                    </li>
+                                    <li class="user-profile dropdown dropdown-animated scale-left">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-tag"></i>
+                                        </a>
+                                        <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+                                                <a class="dropdown-item" href="#">@createAccount</a>
+                                                <a class="dropdown-item" href="#">@createAccountExistingEmail</a>
+                                                <a class="dropdown-item" href="#">@smoke</a>
+                                                <a class="dropdown-item" href="#">@createAccountExistingEmail1</a>
+                                                <a class="dropdown-item" href="#">@createAccountNewEmail</a>
+                                                <a class="dropdown-item" href="#">@Guestcheckout</a>
+                                                <a class="dropdown-item" href="#">@login</a>
+                                                <a class="dropdown-item" href="#">@managePayment</a>
+                                                <a class="dropdown-item" href="#">@quickbuy</a>
+                                                <a class="dropdown-item" href="#">@searchpage</a>
+                                                <a class="dropdown-item" href="#">@regression</a>
+                                                <a class="dropdown-item" href="#">@customerShoppingBag</a>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+                                    <li class="test-item"  status="pass" test-id="1"
+                                            author=""
+                                            tag="@createAccount"
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">As a new user he should be able to create account with Jtv.com</p> 
+                                                <p class="duration text-sm">0h 1m 54s+222ms</p> 
+                                                <span class="datetime">13:52:20 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">As a new user he should be able to create account with Jtv.com</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:52:20</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:54:15</span>
+                                                        <span class='badge badge-default'>0h 1m 54s+222ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @createAccount</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User Creates new account with jtv.com</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<h5 class="card-title outline-child">
+									<div class="node">User Creates new account with jtv.com</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</h5>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.setUp()</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start given" title="HomePageSteps.user_navigates_CreateAccountPage()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given the user navigate to the Create Account page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="CreateAccountSteps.createNewAccount(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When the user creates an account with new email address</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Sedhu</td><td>Madhavan</td><td>msedhu12xyz@gmail.com</td><td>6618037747</td><td>knoxville</td><td>knoxville</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="CreateAccountSteps.accountShouldGetCreated()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then the Account should get created successfully</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.quit(Scenario)</span>
+									</div>
+				<div class="details">Scenario Passed</div>
+							</div>
+						</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User Registers with existing Email address</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<h5 class="card-title outline-child">
+									<div class="node">User Registers with existing Email address</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</h5>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.setUp()</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start given" title="HomePageSteps.user_navigates_CreateAccountPage()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given the user navigate to the Create Account page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="CreateAccountSteps.userCreatesAccountExistingEmail(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When the user creates an account with existing email address</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>jtv</td><td>user</td><td>msedhu@gmail.com</td><td>6618037747</td><td>knoxville</td><td>knoxville</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="CreateAccountSteps.verifyErrorMsg(String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Error message "Email already exists" appears</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.quit(Scenario)</span>
+									</div>
+				<div class="details">Scenario Passed</div>
+							</div>
+						</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">Guest cannot create account with existing email address</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="HomePageSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigates to the home page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="HomePageSteps.user_selects_item()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user selects an item and Adds to Bag</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="CreateAccountSteps.userNavigatesToBagCreateAccount(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user navigates to Bag screen and creates account with existing email</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Sedhu</td><td>Madhavan</td><td>msedhu@gmail.com</td><td>6618037747</td><td>knoxville</td><td>knoxville</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start then" title="CreateAccountSteps.verifyErrorMsg(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Error message "Email already exists" appears</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">Guest cannot create account with existing email address</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="HomePageSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigates to the home page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="HomePageSteps.user_selects_item()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user selects an item and Adds to Bag</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="CreateAccountSteps.createAccountNewEmail(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user navigates to Bag screen and creates account with new email</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>jtv</td><td>user</td><td>msedhuxyz782@gmail.com</td><td>6618037747</td><td>knoxville</td><td>knoxville</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start then" title="CreateAccountSteps.ValidateAccountCreation()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then the Account should get created and user should move to Shipping page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="30"
+                                            author=""
+                                            tag="@Guestcheckout"
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">As a Guest, user should be able to checkout a product</p> 
+                                                <p class="duration text-sm">0h 0m 44s+169ms</p> 
+                                                <span class="datetime">13:54:15 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">As a Guest, user should be able to checkout a product</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:54:15</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:54:59</span>
+                                                        <span class='badge badge-default'>0h 0m 44s+169ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @Guestcheckout</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User checkouts a product as Guest and place an order</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<h5 class="card-title outline-child">
+									<div class="node">User checkouts a product as Guest and place an order</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</h5>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.setUp()</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start given" title="HomePageSteps.i_navigate_to_the_Login_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given the user navigates to the home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="HomePageSteps.user_selects_item()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When the user selects an item and Adds to Bag</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="ProductDetailsSteps.userNavigatesToBag_checkout()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And the user navigates to Bag screen and places Guest checkout</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="ShippingPageSteps.enterShippingAddress_Billing(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And the user enters the Shipping address and continues to Billing</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Sedhu</td><td>M</td><td>1234567890</td><td>1301 Dunwoody Gables Drive</td><td></td><td>Dunwoody</td><td>United States</td><td>GA</td><td>30338</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start and" title="BillingSteps.userFillsCardInfo(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And the user enters payment information and email</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Alexandra Hope</td><td>4539838659946540</td><td>07</td><td>2020</td><td>123</td><td>msm@jtv.com</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start and" title="ReviewOrderSteps.reviewAndPlaceOrder(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And the user reviews and places the Order</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Sedhu</td><td>M</td><td>1234567890</td><td>1301 Dunwoody Gables Drive</td><td></td><td>Dunwoody</td><td>United States</td><td>GA</td><td>30338</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="OrderReponseSteps.order_successfully_placed()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then the order is successfully placed</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.quit(Scenario)</span>
+									</div>
+				<div class="details">Scenario Passed</div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="fail" test-id="42"
+                                            author=""
+                                            tag="@login"
+                                            device="">
+                                        <div class="status-avatar fail-bg">
+                                            <i class="fa fa-times text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Jtv Login</p> 
+                                                <p class="duration text-sm">0h 0m 31s+264ms</p> 
+                                                <span class="datetime">13:54:59 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-fail">Jtv Login</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:54:59</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:55:30</span>
+                                                        <span class='badge badge-default'>0h 0m 31s+264ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @login</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        As a Registered user he should be able to login into Jtv
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User Logins with valid username and password</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start then" title="LoginSteps.login_should_be_successful()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Then login should be successful</span>
+							</div>
+				<textarea disabled class="code-block">java.lang.NullPointerException
+	at pageObjects.AccountHomePage.isAccountHomePageOpened(AccountHomePage.java:25)
+	at stepDefinitions.LoginSteps.login_should_be_successful(LoginSteps.java:39)
+	at ✽.login should be successful(features/login/Login.feature:13)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details"></div>
+				<span class="badge badge-primary"><img class='r-img' onerror='this.style.display="none"' data-featherlight='/Users/sedmad1/Documents/Workspace/jtvAutomation/test-output/embedded1.png' src='/Users/sedmad1/Documents/Workspace/jtvAutomation/test-output/embedded1.png' data-src='/Users/sedmad1/Documents/Workspace/jtvAutomation/test-output/embedded1.png'></span>
+				<div class="details">Scenario Failed</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User Logins with Invalid username and password</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance123</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start then" title="LoginSteps.login_shouldnot_be_successful()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then login should not be successful</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="55"
+                                            author=""
+                                            tag="@managePayment"
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">As a Registered user, he should be able to manage payment methods with Jtv.com</p> 
+                                                <p class="duration text-sm">0h 0m 18s+794ms</p> 
+                                                <span class="datetime">13:55:31 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">As a Registered user, he should be able to manage payment methods with Jtv.com</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:55:31</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:55:49</span>
+                                                        <span class='badge badge-default'>0h 0m 18s+794ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @managePayment</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User should have provision to add new payment details</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="PaymentMethodsSteps.java:15">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user navigates to Payment Methods page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="PaymentMethodsSteps.java:21">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then user should be presented with Payment Details page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="63"
+                                            author=""
+                                            tag="@quickbuy"
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Registered Customers should be able to set up Quick Buy</p> 
+                                                <p class="duration text-sm">0h 1m 23s+335ms</p> 
+                                                <span class="datetime">13:55:49 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Registered Customers should be able to set up Quick Buy</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:55:49</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:57:13</span>
+                                                        <span class='badge badge-default'>0h 1m 23s+335ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @quickbuy</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">Verify the Quick Buy Page</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="QuickBuySteps.i_navigate_to_the_QuickBuy_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user navigates to the Quick Buy page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="QuickBuySteps.user_Presented_QuickBuypage()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then the user is presented with QuickBuy</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">Verify adding New Address to Quick Buy</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<h5 class="card-title outline-child">
+									<div class="node">Verify adding New Address to Quick Buy</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</h5>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.setUp()</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given the user navigate to the Login page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When the user login with following credentials</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start and" title="QuickBuySteps.i_navigate_to_the_QuickBuy_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And the user navigates to the Quick Buy page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="QuickBuySteps.user_addSave_newaddresses(String,String>)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And the user adds new address and save</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>First Name</td><td>Sedhu</td></tr><tr><td>Last Name</td><td>M</td></tr><tr><td>Address One</td><td>1305 Dunwoody Gables Dr</td></tr><tr><td>Address Two</td><td></td></tr><tr><td>City</td><td>Dunwoody</td></tr><tr><td>Country</td><td>United States</td></tr><tr><td>State</td><td>GA - Georgia</td></tr><tr><td>Zip code</td><td>30338</td></tr><tr><td>Default Address</td><td>True</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="QuickBuySteps.address_should_get_saved(DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then the Address should get saved</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Sedhu</td><td>M</td><td>1305 Dunwoody Gables Dr</td><td></td><td>Dunwoody</td><td>United States</td><td>GA - Georgia</td><td>30338</td><td>True</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start asterisk" title="">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Hooks.quit(Scenario)</span>
+									</div>
+				<div class="details">Scenario Passed</div>
+							</div>
+						</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">Verify placing a quick buy order</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>msedhu@gmail.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="ProductDetailsSteps.userSelectsProduct(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And user selects a product</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Watches</td><td>Women's Watches</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="QuickBuySteps.java:26">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And user places quickbuy order</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="BillingSteps.java:20">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then user is taken to Secure Checkout page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="BillingSteps.java:27">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And quickbuy order should be placed successfully</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="89"
+                                            author=""
+                                            tag="@searchpage"
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">As a Customer user should be able to Search items</p> 
+                                                <p class="duration text-sm">0h 0m 38s+215ms</p> 
+                                                <span class="datetime">13:57:13 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">As a Customer user should be able to Search items</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:57:13</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:57:51</span>
+                                                        <span class='badge badge-default'>0h 0m 38s+215ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @searchpage</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User selects Shop by Type to shop Ring</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="HomePageSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user navigates to the home page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="HomePageSteps.verify_searchfield_text(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then the user should see Search field with the text "What are you looking for?"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">User Search items to view the search results</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="HomePageSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user navigates to the home page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="SearchResultsSteps.userSearchItems(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And the user Search with the text "Ring"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="SearchResultsSteps.verify_Breadcrumb(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Breadcrumb should display "Your search results for"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="105"
+                                            author=""
+                                            tag="@customerShoppingBag"
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Registered User be able to add and view shopping bag</p> 
+                                                <p class="duration text-sm">0h 0m 17s+350ms</p> 
+                                                <span class="datetime">13:57:51 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Registered User be able to add and view shopping bag</h5>
+                                                        <span class='badge badge-success'>08.01.2019 13:57:51</span>
+                                                        <span class='badge badge-danger'>08.01.2019 13:58:09</span>
+                                                        <span class='badge badge-default'>0h 0m 17s+350ms</span>
+                                                    </div>
+                                                    <div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @customerShoppingBag</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">Registered User to view empty shopping bag</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.setUp()</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="LoginSteps.i_navigate_to_the_Login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given the user navigate to the Login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start when" title="LoginSteps.i_login_with_email_and_Password(DataTable)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>When the user login with following credentials</span>
+							</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>sedhu.madhavan@jtv.com</td><td>reliance</td></tr></table></div>
+							<div class="d-flex align-items-center justify-content-start and" title="ShoppingBagSteps.navigateToShoppingBagPage()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And user navigates to Shopping bag screen</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="ShoppingBagSteps.verifyShoppingBagScreen(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then user should be displayed "Your Shopping Bag is empty"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="ShoppingBagSteps.continueShopping()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And option to continue shopping</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Hooks.quit(Scenario)</span>
+							</div>
+				<div class="details">Scenario Passed</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/24cb10e/spark/js/script.js"></script>
+<script type="text/javascript">
+
+
+
+$(document).ready(function() {
+});
+
+		
+</script></body>
+</html>

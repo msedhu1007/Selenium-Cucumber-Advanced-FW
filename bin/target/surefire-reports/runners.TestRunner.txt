@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: runners.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 350.133 sec <<< FAILURE!
+runScenario(runners.TestRunner)  Time elapsed: 24.678 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at pageObjects.AccountHomePage.isAccountHomePageOpened(AccountHomePage.java:25)
+	at stepDefinitions.LoginSteps.login_should_be_successful(LoginSteps.java:39)
+	at ✽.login should be successful(features/login/Login.feature:13)
+
