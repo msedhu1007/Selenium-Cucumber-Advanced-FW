@@ -1,5 +1,0 @@
-utilities/Hooks.class
-utilities/BaseClass.class
-pageObjects/LoginPage.class
-pageObjects/HomePage.class
-stepDefinitions/LoginSteps.class
