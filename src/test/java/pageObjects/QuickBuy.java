@@ -1,12 +1,11 @@
 package pageObjects;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import utilities.BaseClass;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class QuickBuy extends BasePage{
 	

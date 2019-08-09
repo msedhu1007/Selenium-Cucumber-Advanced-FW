@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-
 import utilities.BaseClass;
 
 public class ShippingPage {
@@ -25,7 +24,7 @@ public class ShippingPage {
 	By btnEnterANewAddress = By.cssSelector("button.button.secondary.expand");
 	By rdoSuggestedAddress = By.cssSelector("input#suggested + label");
 	By rdoEnteredAddress = By.id("entered");
-	
+
 	BaseClass bc = new BaseClass();
 	
 	public void enterShippingAddress(String fName, String lName, String phone, String address1, String address2, String city, String country, String state, String zipcode) {
@@ -43,7 +42,7 @@ public class ShippingPage {
 	}
 	
 	public void selectSuggestedAddress() {
-		bc.WaitForElementPresent(rdoSuggestedAddress, 10);
+		bc.WaitForElementPresent(rdoSuggestedAddress, 20);
 		bc.click(rdoSuggestedAddress);
 		bc.click(btnUseThisAddress);
 	}
@@ -60,7 +59,19 @@ public class ShippingPage {
 	public void waitForShippingPageToOpen() {
 		bc.WaitForElementPresent(btnContinueBilling, 25);
 	}
-	
-	
+
+	public void clickContinueToBilling(){
+	//	bc.click(btnContinueToBilling);
+		bc.click(btnContinueBilling);
+	}
+
+	public Boolean isOnlyStandardDeliveryDisplayed(){
+			if(bc.isDisplayed(chkboxStdDelivery) && !bc.isDisplayed(chkboxNextBusinessDay) && !bc.isDisplayed(chkbox2ndBusinessDay) && !bc.isDisplayed(chkbox3rdBusinessDay)){
+				return true;
+			}
+			else{
+				return false;
+			}
+	}
 
 }

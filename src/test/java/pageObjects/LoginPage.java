@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-
 import utilities.BaseClass;
 
 
@@ -21,6 +20,7 @@ public class LoginPage extends BasePage{
 	public void login(String email, String pwd) {
 		bc.SendKeys(textEmailAddress, email);
 		bc.SendKeys(textPassword, pwd);
+		bc.selectChkbox(chkboxKeepMeSignedIn);
 		bc.click(btnSignIn);
 	}
 

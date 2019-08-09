@@ -1,13 +1,13 @@
 package stepDefinitions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import pageObjects.AccountHomePage;
 import pageObjects.HomePage;
 import pageObjects.SearchResultsPage;
 import utilities.BaseClass;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchResultsSteps {
 	AccountHomePage ahp = new AccountHomePage();

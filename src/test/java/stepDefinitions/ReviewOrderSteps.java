@@ -1,44 +1,65 @@
 package stepDefinitions;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import cucumber.api.Scenario;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
+import io.cucumber.datatable.DataTable;
+import pageObjects.ReviewOrderPage;
+import pageObjects.ShippingPage;
+import pageObjects.BillingPage;
+import pageObjects.ShoppingBagPage;
+
+import java.text.DecimalFormat;
 
 import java.util.List;
 
-import cucumber.api.java.en.And;
-import io.cucumber.datatable.DataTable;
-import pageObjects.ReviewOrderPage;
-import utilities.BaseClass;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class ReviewOrderSteps {
-	ReviewOrderPage ro = new ReviewOrderPage();
-	
-			
-	@And("^the user reviews and places the Order$")
-	public void reviewAndPlaceOrder(DataTable tblvalues)  {
-		
-		List<String> list = tblvalues.asList();
-		System.out.print(ro.getShippingAddress());
-		System.out.print(ro.getShippingAddress());
-		
-		assertThat(ro.getShippingAddress().contains(list.get(0)));
-		assertThat(ro.getShippingAddress().contains(list.get(1)));
-		assertThat(ro.getShippingAddress().contains(list.get(2)));
-		assertThat(ro.getShippingAddress().contains(list.get(3)));
-		assertThat(ro.getShippingAddress().contains(list.get(4)));
-		assertThat(ro.getShippingAddress().contains(list.get(5)));
-		assertThat(ro.getShippingAddress().contains(list.get(6)));
-		assertThat(ro.getShippingAddress().contains(list.get(7)));
-		assertThat(ro.getShippingAddress().contains(list.get(8)));
-		ro.placeOrder();
-		
-//		assertThat(ro.getShippingAddress().contains(data.get(1).get("First Name").toLowerCase()));
-//		assertThat(ro.getShippingAddress().contains(data.get(0).get("Last Name").toLowerCase()));
-//		assertThat(ro.getShippingAddress().contains(data.get(0).get("Phone").toLowerCase()));
-//		assertThat(ro.getShippingAddress().contains(data.get(0).get("City").toLowerCase()));
-//		assertThat(ro.getShippingAddress().contains(data.get(0).get("Zip Code").toLowerCase()));
-//		assertThat(ro.getShippingAddress().contains(data.get(0).get("Address1").toLowerCase()));
-//		ro.placeOrder();
-	}
+    ReviewOrderPage ro = new ReviewOrderPage();
+    ShippingPage sp = new ShippingPage();
+    BillingPage bp = new BillingPage();
+    ShoppingBagPage sbp = new ShoppingBagPage();
+
+
+    @And("^the user reviews and places the Order$")
+    public void reviewAndPlaceOrder(DataTable tblvalues) {
+        List<String> list = tblvalues.asList();
+        assertThat(ro.getShippingAddress().contains(list.get(0)));
+        assertThat(ro.getShippingAddress().contains(list.get(1)));
+        assertThat(ro.getShippingAddress().contains(list.get(2)));
+        assertThat(ro.getShippingAddress().contains(list.get(3)));
+        assertThat(ro.getShippingAddress().contains(list.get(4)));
+        assertThat(ro.getShippingAddress().contains(list.get(5)));
+        assertThat(ro.getShippingAddress().contains(list.get(6)));
+        assertThat(ro.getShippingAddress().contains(list.get(7)));
+        assertThat(ro.getShippingAddress().contains(list.get(8)));
+        ro.placeOrder();
+
+    }
+
+
+    @And("^the user checkout with card details and places order$")
+    public void checkoutAndEnterCardDetails(DataTable tblValues) throws Exception {
+        sbp.clickCheckOut();
+        List<String> list = tblValues.asList(String.class);
+        sp.clickContinueToBilling();
+        bp.enterCVVIfEnabled(list.get(0), list.get(1), list.get(2), list.get(3), list.get(4), false, false);
+        bp.reviewOrder();
+        ro.placeOrder();
+    }
+
+
+
+    @Then("^Order summary has the Total Due today calculated correctly$")
+    public void verifyOrderSummaryTotalDue() {
+        double expectedTotalOrderDue;
+        DecimalFormat df = new DecimalFormat("0.00");
+        expectedTotalOrderDue = (Double.parseDouble(ro.getSubTotal()) + Double.parseDouble(ro.getSalesTax()) - Double.parseDouble(ro.getOrderDiscounts())) / 5;
+        expectedTotalOrderDue += Double.parseDouble(ro.getStdDelivery());
+        assertThat(df.format(expectedTotalOrderDue)).isEqualTo(ro.getTotalDueToday());
+
+    }
 
 }

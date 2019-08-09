@@ -1,18 +1,14 @@
 package runners;
 
-import java.io.IOException;
-
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.apache.log4j.Logger;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-
-import cucumber.api.CucumberOptions;
-import cucumber.api.Scenario;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
 import utilities.BaseClass;
 import utilities.ReportHelper;
+
+import java.io.IOException;
 
 
 @CucumberOptions(  
@@ -44,9 +40,6 @@ public class TestRunner  extends AbstractTestNGCucumberTests{
 	public void generateHTMLReports() {
 		ReportHelper.generateCucumberReport();
 	}
-
-
-
 
 
 

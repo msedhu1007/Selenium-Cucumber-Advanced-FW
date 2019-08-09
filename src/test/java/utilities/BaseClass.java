@@ -1,33 +1,13 @@
 package utilities;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Properties;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
+import com.google.common.io.Files;
+import cucumber.api.Scenario;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.NoSuchFrameException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
-import org.openqa.selenium.UnhandledAlertException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -36,20 +16,17 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import com.google.common.io.Files;
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
-import cucumber.api.Scenario;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseClass {
@@ -82,7 +59,7 @@ public class BaseClass {
 		String baseUrl = System.getProperty("url");
 		if(baseUrl == null) {
 			LoadConfigProperty();
-			baseUrl = config.getProperty("url");		
+			baseUrl = config.getProperty("url");
 		}
 		driver.get(baseUrl);
 		if(browser.equalsIgnoreCase("Firefox") && baseUrl.toLowerCase().contains("uat")) {
@@ -99,7 +76,7 @@ public class BaseClass {
 		}
 		else {
 			driver.get(baseUrl);
-		}	*/	
+		}	*/
 	}
 
 	public static String currentDateTime() {
@@ -113,41 +90,41 @@ public class BaseClass {
 	public void openBrowser()  throws Exception {
 		browser = System.getProperty("browser");
 		LoadConfigProperty();
-		if(browser == null) {	
+		if(browser == null) {
 			browser = config.getProperty("browserType");
 		}
 
 		switch (browser.toLowerCase())
 		{
-		case "firefox":
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions foptions = new FirefoxOptions();
-			foptions.setCapability(CapabilityType.BROWSER_VERSION,"62.0");
-			foptions.setLogLevel(FirefoxDriverLogLevel.TRACE);	
-			foptions.setAcceptInsecureCerts(true);
-			driver = new FirefoxDriver();
-			Log.info("Firefox is launched");
-			break;
-		case "headless":
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");  
-			driver = new ChromeDriver(options);
-			Log.info("Ghost browser is launched");
-			break;
-		case "opera":
-			WebDriverManager.operadriver().setup();
-			driver = new OperaDriver();
-			Log.info("Opera is launched");
-			break;
-		default:
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions choptions = new ChromeOptions();
-			choptions.addExtensions(new File("src/main/resources/extension.crx"));
-			//	choptions.addArguments("--no-sandbox");
-			driver = new ChromeDriver(choptions);
-			Log.info("Chrome is launched");
-			break;
+			case "firefox":
+				WebDriverManager.firefoxdriver().setup();
+				FirefoxOptions foptions = new FirefoxOptions();
+				foptions.setCapability(CapabilityType.BROWSER_VERSION,"62.0");
+				foptions.setLogLevel(FirefoxDriverLogLevel.TRACE);
+				foptions.setAcceptInsecureCerts(true);
+				driver = new FirefoxDriver();
+				Log.info("Firefox is launched");
+				break;
+			case "headless":
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+				driver = new ChromeDriver(options);
+				Log.info("Ghost browser is launched");
+				break;
+			case "opera":
+				WebDriverManager.operadriver().setup();
+				driver = new OperaDriver();
+				Log.info("Opera is launched");
+				break;
+			default:
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions choptions = new ChromeOptions();
+				choptions.addExtensions(new File("src/main/resources/extension.crx"));
+				//	choptions.addArguments("--no-sandbox");
+				driver = new ChromeDriver(choptions);
+				Log.info("Chrome is launched");
+				break;
 		}
 	}
 
@@ -354,7 +331,7 @@ public class BaseClass {
 		new WebDriverWait(driver, 60) {
 		}.until(new ExpectedCondition<Boolean>() {
 			@Override
-			public Boolean apply(WebDriver driver) {                        
+			public Boolean apply(WebDriver driver) {
 				return (driver.getWindowHandles().size() == numberOfWindows);
 			}
 		});
@@ -639,7 +616,7 @@ public class BaseClass {
 
 
 	public void pressEsc() {
-		Actions action = new Actions(driver); 
+		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ESCAPE).build().perform();
 
 	}
@@ -660,7 +637,8 @@ public class BaseClass {
 	 */
 	public boolean waitForElementToDisappear(By objname) {
 		try {
-			Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
+			Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+					.withTimeout(60, TimeUnit.SECONDS)
 					.pollingEvery(1, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 			fluentWait.until(ExpectedConditions.invisibilityOf(driver.findElement(objname)));
 			return true;
@@ -670,6 +648,30 @@ public class BaseClass {
 			return false;
 		}
 	}
+
+
+
+	public WebElement waitUntilElementToBeClickable(By objname, int time)
+	{
+		final FluentWait<WebDriver> wait = new FluentWait<>(driver)
+				.withTimeout(time, TimeUnit.SECONDS)
+				.pollingEvery(500, TimeUnit.MILLISECONDS)
+				.ignoring(NoSuchElementException.class);
+		return wait.until(new ExpectedCondition<WebElement>() {
+			@Override
+			public WebElement apply(WebDriver webDriver) {
+				try {
+					if (webDriver.findElement(objname).isDisplayed())
+						return webDriver.findElement(objname);
+					return null;
+				} catch (final ElementNotVisibleException e) {
+					return null;
+				}
+			}
+		});
+		}
+
+
 
 
 	public void dismissAlert() {
@@ -683,15 +685,7 @@ public class BaseClass {
 		}
 	}
 
-	//	public void dismissAlert() {
-	//		try {
-	//			Alert alt = driver.switchTo().alert();
-	//			alt.dismiss();
-	//		}
-	//		catch (NoAlertPresentException f) {
-	//			pressEsc();
-	//		}
-	//	}
+
 
 
 	public void acceptAlert() {
@@ -750,13 +744,14 @@ public class BaseClass {
 		while(i>0) {
 			try {
 				i--;
-				driver.findElement(objname).click();		
+				driver.findElement(objname).click();
 			}
 			catch(Exception e) {
 				ignoreClick(objname);
 			}
 		}
 	}
+
 
 
 
@@ -816,18 +811,80 @@ public class BaseClass {
 		}
 		return randomno;
 	}
-	
-	
+
+
 	// Generate Alpha numeric values
 	public String generateRandomAlphanumericString(int n) {
-	     String generatedString = RandomStringUtils.randomAlphanumeric(n);
-	     return generatedString;
+		String generatedString = RandomStringUtils.randomAlphanumeric(n);
+		return generatedString;
 	}
-	
-	
+
+
 	public void setText(By objname, String value) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;  
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value='"+value+"';", driver.findElement(objname));
 	}
+
+
+
+	public void getCookies(){
+		try
+		{
+			File file = new File(System.getProperty("user.dir") + "//src//test//resources//config//cookies.data");
+			file.createNewFile();
+			FileWriter fileWrite = new FileWriter(file);
+			BufferedWriter Bwrite = new BufferedWriter(fileWrite);
+
+			for(Cookie ck : driver.manage().getCookies())
+			{
+				Bwrite.write((ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure()));
+				Bwrite.newLine();
+			}
+			Bwrite.close();
+			fileWrite.close();
+
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+
+
+	public void setCookies(){
+		try {
+			File file = new File(System.getProperty("user.dir") + "//src//test//resources//config//cookies.data");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader Buffreader = new BufferedReader(fileReader);
+			String strline;
+			while((strline=Buffreader.readLine())!=null){
+				StringTokenizer token = new StringTokenizer(strline,";");
+				while(token.hasMoreTokens()){
+					String name = token.nextToken();
+					String value = token.nextToken();
+					String domain = token.nextToken();
+					String path = token.nextToken();
+					Date expiry = null;
+
+					String val;
+					if(!(val=token.nextToken()).equals("null"))
+					{
+						expiry = new Date(val);
+					}
+					Boolean isSecure = new Boolean(token.nextToken()).
+							booleanValue();
+					Cookie ck = new Cookie(name,value,domain,path,expiry,isSecure);
+					driver.manage().addCookie(ck); // This will add the stored cookie to your current session
+				}
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+
+
+
 
 }

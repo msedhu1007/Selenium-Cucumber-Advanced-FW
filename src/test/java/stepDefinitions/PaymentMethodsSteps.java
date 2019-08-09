@@ -1,9 +1,9 @@
 package stepDefinitions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import cucumber.api.java8.En;
 import pageObjects.PaymentMethodsPage;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PaymentMethodsSteps implements En{
 	

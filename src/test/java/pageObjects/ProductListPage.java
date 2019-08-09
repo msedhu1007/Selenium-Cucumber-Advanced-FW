@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-
 import utilities.BaseClass;
 
 public class ProductListPage {
@@ -19,9 +18,10 @@ public class ProductListPage {
 	By linkQuickView = By.xpath("(//button[text()='Quick View'])[1]");
 	By btnQuickBuy = By.id("quick-buy-submit");
 
+
 	BaseClass bc = new BaseClass();
 
-	public void selectFirstProduct() {
+	public void selectRingsFirstProduct() {
 		bc.WaitForElementPresent(linkRings, 25);
 		bc.JSClick(linkRings);
 		bc.waitUntillElementToBeClickable(firstItem, 25);
@@ -58,6 +58,12 @@ public class ProductListPage {
 	
 	public void clickQuickBuy() {
 		bc.click(btnQuickBuy);
+	}
+
+
+	public void selectFirstProduct(){
+		bc.waitUntillElementToBeClickable(firstItem, 25);
+		bc.JSClick(firstItem);
 	}
 
 }

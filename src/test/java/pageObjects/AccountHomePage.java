@@ -1,8 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-
 import utilities.BaseClass;
 import utilities.Log;
 
@@ -19,6 +17,10 @@ public class AccountHomePage extends BasePage{
 	By imgJtvLogo = By.cssSelector("div.masthead-section.logo a");
 	By txtHeading = By.cssSelector("div.account-heading p");
 	By lnkPaymentMethod = By.cssSelector("a[href*='payment.jsp'][ role='menuitem']");
+	By eleShippingAddress = By.xpath("(//p[@class='address'])[2]");
+	By eleBillingAddress = By.xpath("(//p[@class='address'])[1]");
+	By lnkManageShippingAddress = By.xpath("(//a[contains(@href,'address.jsp')])[3]");
+	By lnkManageBillingAddress = By.xpath("(//a[contains(@href,'address.jsp')])[2]");
 	
 
 	public boolean isAccountHomePageOpened(){
@@ -38,6 +40,7 @@ public class AccountHomePage extends BasePage{
 			handleModal();
 		}
 	}
+
 	
 	public String getHeading() {
 		bc.WaitForElementPresent(headingAccountHome, 30);
@@ -66,4 +69,23 @@ public class AccountHomePage extends BasePage{
 		bc.waitForElementToDisappear(txtOrderNumber);
 	}
 
+
+	public void clickMyAccount(){
+		bc.waitUntillElementToBeVisible(linkMyAccount, 20);
+		bc.JSClick(linkMyAccount);
+	}
+
+	public Boolean chkShippingAddressIsEmpty(){
+		return bc.findAllElements(eleShippingAddress).size()>0 ? false : true;
+	}
+
+
+	public Boolean chkBillingAddressIsEmpty(){
+		return bc.findAllElements(eleBillingAddress).size()>0 ? false : true;
+	}
+
+
+	public void clickShippingAddress(){
+		bc.click(lnkManageShippingAddress);
+	}
 }

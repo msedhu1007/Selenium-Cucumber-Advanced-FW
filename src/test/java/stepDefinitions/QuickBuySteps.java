@@ -1,10 +1,5 @@
 package stepDefinitions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.List;
-import java.util.Map;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -13,6 +8,11 @@ import io.cucumber.datatable.DataTable;
 import pageObjects.AccountHomePage;
 import pageObjects.ProductListPage;
 import pageObjects.QuickBuy;
+
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class QuickBuySteps implements En{
 

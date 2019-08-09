@@ -1,9 +1,6 @@
 package stepDefinitions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.List;
-
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,6 +9,10 @@ import pageObjects.AccountHomePage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import utilities.BaseClass;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginSteps {
 	HomePage homepage = new HomePage();
@@ -27,15 +28,16 @@ public class LoginSteps {
 	}
 
 	@When("^the user login with following credentials$")
-	public void i_login_with_email_and_Password(DataTable tblValues) throws Throwable {
+	public void i_login_with_email_and_Password(DataTable tblValues) {
 		List<String> list = tblValues.asList(String.class);
 		loginpage.waitforLoginPageToOpen();
 		loginpage.login(list.get(0), list.get(1));
 	}
 
 	@Then("^login should be successful$")
-	public void login_should_be_successful() throws Throwable {
+	public void login_should_be_successful() {
 		accountpage.waitforAccountHomePagetoOpen();
+	//	bc.getCookies();
 		assertThat(accountpage.isAccountHomePageOpened()).isTrue();
 	}
 	
@@ -43,6 +45,17 @@ public class LoginSteps {
 	public void login_shouldnot_be_successful() {
 		assertThat(homepage.getErrorMsg().contains("We're unable to find a match for this username/password combination"));
 	}
+
+
+	@And("^the user logs in to the application with following credentials$")
+	public void navigateAndlogin(DataTable tblValues){
+		homepage.navigate_to_LoginPage();
+		List<String> list = tblValues.asList(String.class);
+		loginpage.waitforLoginPageToOpen();
+		loginpage.login(list.get(0), list.get(1));
+	}
+
+
 
 
 

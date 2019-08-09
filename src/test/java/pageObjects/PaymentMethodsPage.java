@@ -1,8 +1,9 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.WebElement;
 import utilities.BaseClass;
+import java.util.List;
 
 public class PaymentMethodsPage extends BasePage{
 	
@@ -21,6 +22,7 @@ public class PaymentMethodsPage extends BasePage{
 	By btnDeletePaymentMethod = By.xpath("//a[text()='Delete Payment Method']");
 	By btnCancel = By.xpath("//a[contains(text(),'Cancel')]");
 	By btnDelete = By.id("submit");
+	By btnEdit = By.xpath("//a[@class='edit-link']");
 	
 	
 	
@@ -40,7 +42,7 @@ public class PaymentMethodsPage extends BasePage{
 		bc.click(btnSaveforFutureOrders);
 	}
 	
-	public void deletePaymentDetails() throws Exception {
+	public void deletePaymentDetails()  {
 		bc.WaitForElementPresent(linkEditDefaultPayment, 20);
 		bc.click(linkEditDefaultPayment);
 		bc.WaitForElementPresent(btnDeletePaymentMethod, 15);
@@ -48,22 +50,33 @@ public class PaymentMethodsPage extends BasePage{
 		bc.WaitForElementPresent(btnDelete, 10);
 		bc.click(btnDelete);
 	}
-	
-	
-	public Boolean isAllfieldsDisplayed() {
-		if(bc.isDisplayed(txtName) && (bc.isDisplayed(txtCardNumber)) && (bc.isDisplayed(lstExpirationMonth)) && (bc.isDisplayed(lstExpirationYear))) {
-			return true;
-		}
-		else {
-			return false;
-		}
-				
-	}
-	
+
 	
 	public Boolean isAllFieldsDisplayed() {
 		Boolean strResult;
 		strResult = bc.isDisplayed(txtName) && (bc.isDisplayed(txtCardNumber)) && (bc.isDisplayed(lstExpirationMonth)) && (bc.isDisplayed(lstExpirationYear)) ? true : false ;
 		return strResult;		
+	}
+
+
+	public void selectEditPayment(){
+		if(bc.findAllElements(btnEdit).size()>0){
+			List<WebElement> ele = bc.findAllElements(btnEdit);
+			ele.get(0).click();
+		}
+	}
+
+
+	public void deleteAllpayments(){
+	int n = bc.findAllElements(btnEdit).size();
+	while(n > 0){
+		List<WebElement> ele = bc.findAllElements(btnEdit);
+		ele.get(0).click();
+		bc.WaitForElementPresent(btnDeletePaymentMethod, 15);
+		bc.click(btnDeletePaymentMethod);
+		bc.WaitForElementPresent(btnDelete, 20);
+		bc.click(btnDelete);
+		n--;
+	}
 	}
 }

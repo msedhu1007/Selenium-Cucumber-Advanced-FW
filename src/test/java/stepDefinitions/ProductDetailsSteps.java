@@ -1,16 +1,11 @@
 package stepDefinitions;
 
-import java.util.List;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
-import pageObjects.AccountHomePage;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
-import pageObjects.ProductDetailsPage;
-import pageObjects.ProductListPage;
-import pageObjects.ShoppingBagPage;
+import pageObjects.*;
+
+import java.util.List;
 
 public class ProductDetailsSteps {
 	ProductDetailsPage pdp = new ProductDetailsPage();
@@ -19,6 +14,7 @@ public class ProductDetailsSteps {
 	HomePage hp = new HomePage();
 	AccountHomePage ahp = new AccountHomePage();
 	ProductListPage plp = new ProductListPage();
+	ShippingPage sp = new ShippingPage();
 	
 	@And("^the user navigates to Bag screen and places Guest checkout$")
 	public void userNavigatesToBag_checkout() {
@@ -26,7 +22,6 @@ public class ProductDetailsSteps {
 		pdp.clickBag();
 		sbp.clickCheckOut();
 		lp.doGuestCheckOut();
-		
 	}
 	
 	
@@ -37,7 +32,18 @@ public class ProductDetailsSteps {
 		ahp.navigateToHomePage();
 		hp.selectJewelryTypes(lst.get(0));
 		plp.selectWatchType(lst.get(1));
-		
+
 	}
+
+
+	@And("^the user navigates to Bag screen$")
+	public void userNavigatesToBagAndCheckoutOrder(){
+		pdp.hoverOverBag();
+		pdp.clickBag();
+		sbp.clickCheckOut();
+	}
+
+
+
 
 }

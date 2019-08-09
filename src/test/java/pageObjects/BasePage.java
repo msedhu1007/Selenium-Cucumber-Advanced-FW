@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-
 import utilities.BaseClass;
 
 public class BasePage {
@@ -38,7 +37,6 @@ public class BasePage {
 	
 	
 	public void handleModal() {
-	
 		if(bc.findAllElements(icnClose).size()>0) {
 			bc.retryClick(icnClose,5);
 			bc.retryClick(icnclose,5);

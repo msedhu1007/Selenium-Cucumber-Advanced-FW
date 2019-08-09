@@ -1,22 +1,16 @@
 package stepDefinitions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.List;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java8.En;
 import io.cucumber.datatable.DataTable;
-import pageObjects.AccountHomePage;
-import pageObjects.CreateAccountPage;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
-import pageObjects.ProductDetailsPage;
-import pageObjects.ShippingPage;
-import pageObjects.ShoppingBagPage;
+import pageObjects.*;
 import utilities.BaseClass;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class CreateAccountSteps implements En{

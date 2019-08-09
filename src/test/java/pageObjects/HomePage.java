@@ -1,8 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import utilities.BaseClass;
 
 
@@ -32,8 +30,9 @@ public class HomePage extends BasePage{
 	By linkMensJewelry = By.xpath("(//a[text()='Men's Jewelry'])[1]");
 	By linkChildrensJewelry = By.xpath("(//a[text()='Children's Jewelry'])[1]");
 	By linkAllJewelry = By.xpath("(//a[text()='All Jewelry'])[1]");
-	
-	
+	By linkStretchPay = By.id("facet-title-stretchPay");
+	By chkboxStretchPay5 = By.cssSelector("div[data-id='StretchPay-5-Pay-stretchPay']");
+	By eleFilter = By.xpath("(//div[@class='applied-facet-item'])[2]");
 
 
 	BaseClass bc = new BaseClass();
@@ -90,50 +89,62 @@ public class HomePage extends BasePage{
 		
 		switch(type) {
 		case "Rings":
+			bc.WaitForElementPresent(linkRings,10);
 			bc.JSClick(linkRings);
 			break;
 
 		case "Earrings":
+			bc.WaitForElementPresent(linkEarrings,10);
 			bc.JSClick(linkEarrings);
 			break;
 
 		case "Bracelets":
+			bc.WaitForElementPresent(linkBracelets,10);
 			bc.JSClick(linkBracelets);
 			break;
 
 		case "Necklaces":
-			bc.JSClick(linkBracelets);
+			bc.WaitForElementPresent(linkNecklaces,10);
+			bc.JSClick(linkNecklaces);
 			break;
 
 		case "Watches":
+			bc.WaitForElementPresent(linkWatches,10);
 			bc.JSClick(linkWatches);
 			break;
 
 		case "Jewelry Sets":
+			bc.WaitForElementPresent(linkJewelrySets,10);
 			bc.JSClick(linkJewelrySets);
 			break;
 
 		case "Jewelry Accessories":
+			bc.WaitForElementPresent(linkJewelryAccessories,10);
 			bc.JSClick(linkJewelryAccessories);
 			break;
 
 		case "New Jewelry":
+			bc.WaitForElementPresent(linkNewJewelry,10);
 			bc.JSClick(linkNewJewelry);
 			break;
 
 		case "Jewelry Sale":
+			bc.WaitForElementPresent(linkJewelrySale,10);
 			bc.JSClick(linkJewelrySale);
 			break;
 
 		case "Men's Jewelry":
+			bc.WaitForElementPresent(linkMensJewelry,10);
 			bc.JSClick(linkMensJewelry);
 			break;
 
 		case "Children's Jewelry":
+			bc.WaitForElementPresent(linkChildrensJewelry,10);
 			bc.JSClick(linkChildrensJewelry);
 			break;
 
 		case "All Jewelry":
+			bc.WaitForElementPresent(linkAllJewelry,10);
 			bc.JSClick(linkAllJewelry);
 			break;
 
@@ -141,7 +152,11 @@ public class HomePage extends BasePage{
 	}
 	
 	
-	
+	public void clickStretchPay() throws Exception{
+		bc.click(linkStretchPay);
+		bc.click(chkboxStretchPay5);
+		bc.WaitForElementPresent(eleFilter,20);
+	}
 
 
 
