@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-
 import utilities.BaseClass;
 
 public class ShippingPage {

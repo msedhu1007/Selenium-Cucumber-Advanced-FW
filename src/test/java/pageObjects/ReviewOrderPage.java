@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor;
 import org.openqa.selenium.By;
 import utilities.BaseClass;
 
@@ -22,6 +21,7 @@ public class ReviewOrderPage extends BasePage {
     By SalesTax = By.xpath("//div[text()='Sales Tax']/following-sibling::div");
     By OrderTotal = By.xpath("(//div[text()='Order Total']/following-sibling::div)[1]");
     By orderDiscounts = By.xpath("(//div[text()='Order Discounts']/following-sibling::div)[2]");
+    By txtErrorMsg = By.cssSelector("div.alert-box.error");
 
     BaseClass bc = new BaseClass();
 
@@ -83,4 +83,12 @@ public class ReviewOrderPage extends BasePage {
             return "0";
         }
     }
+
+
+    public String getErrorMsg(){
+        return bc.getText(txtErrorMsg);
+    }
+
+
+
 }

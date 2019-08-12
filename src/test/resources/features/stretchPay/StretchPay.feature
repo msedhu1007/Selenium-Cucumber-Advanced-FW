@@ -22,3 +22,13 @@ Feature: Registered User be able to place stretch pay orders
 
 
 
+  @smoke
+  Scenario: Registered User in READY FOR REVIEW status unable to place stretch pay orders
+    Given the user logs in to the application with following credentials
+      | msedhu@gmail.com | reliance |
+    When the user navigates to the Home page
+    And the user selects a Stretch pay item and Adds to Bag
+    And user navigates to Shopping bag screen
+    And the user checkout with card details and places order
+      | Bob Allen | 4916855657472322 | 11 | 2022 | 578 |
+    Then Stretch Pay order should not go through successfully
