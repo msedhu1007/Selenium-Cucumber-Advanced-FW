@@ -21,6 +21,7 @@ public class BasePage {
 	By icnSearch = By.id("search");
 	By icnClose = By.cssSelector("div.modal-close");
 	By icnclose = By.cssSelector("span.icon-close-x");
+	By lnkMenuItem = By.cssSelector("a[href*='account/address'][role='menuitem']");
 
 	
 	public Boolean isSearchFieldPresent() {

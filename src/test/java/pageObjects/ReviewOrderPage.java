@@ -21,6 +21,7 @@ public class ReviewOrderPage extends BasePage {
     By SalesTax = By.xpath("//div[text()='Sales Tax']/following-sibling::div");
     By OrderTotal = By.xpath("(//div[text()='Order Total']/following-sibling::div)[1]");
     By orderDiscounts = By.xpath("(//div[text()='Order Discounts']/following-sibling::div)[2]");
+    By btnEditQuickBuyPref = By.cssSelector("div.account-section.edit-quickbuy");
     By txtErrorMsg = By.cssSelector("div.alert-box.error");
 
     BaseClass bc = new BaseClass();
@@ -90,5 +91,12 @@ public class ReviewOrderPage extends BasePage {
     }
 
 
+    public Boolean isEditPreferenceDisplayed(){
+        return bc.isDisplayed(btnEditQuickBuyPref);
+    }
 
+
+    public void clickEditPrefDisplayed(){
+        bc.click(btnEditQuickBuyPref);
+    }
 }

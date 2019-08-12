@@ -401,7 +401,6 @@ public class BaseClass {
      * Get Text
      *
      * @param Object Name
-     * @throws Exception
      * @author Sedhu
      */
 
@@ -634,6 +633,18 @@ public class BaseClass {
 
     }
 
+
+    public void mouseHoverAndClick(By objOne, By objTwo) {
+        WaitForElementPresent(objOne, 20);
+        WebElement mainObj = driver.findElement(objOne);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(mainObj).build().perform();
+        WaitForElementPresent(objTwo, 10);
+        WebElement subMenu = driver.findElement(objTwo);
+        actions.moveToElement(subMenu);
+        actions.click().build().perform();
+    }
+
     /**
      * Wait for element to disappear.
      *
@@ -725,6 +736,10 @@ public class BaseClass {
         action.moveToElement(driver.findElement(objname)).build().perform();
     }
 
+
+    public void scrollToElement(By objname) {
+        ((JavascriptExecutor)driver).executeScript("arguments[0]. scrollIntoView",driver.findElement(objname));
+    }
 
     public WebElement focusElement() {
         return driver.switchTo().activeElement();
@@ -875,6 +890,5 @@ public class BaseClass {
             e.printStackTrace();
         }
     }
-
 
 }

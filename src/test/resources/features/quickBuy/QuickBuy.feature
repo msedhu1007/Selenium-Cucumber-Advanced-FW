@@ -37,6 +37,7 @@ Feature: Registered Customers should be able to set up Quick Buy
     Given the user navigate to the Login page
     When the user login with following credentials
       | msedhu@gmail.com | reliance |
+    And the user moves to the Home page
     And user selects a product
       | Watches | Women's Watches |
     And user places quickbuy order

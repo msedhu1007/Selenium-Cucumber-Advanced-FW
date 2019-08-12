@@ -3,6 +3,7 @@ package stepDefinitions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import pageObjects.*;
 import utilities.BaseClass;
 
@@ -16,6 +17,7 @@ public class HomePageSteps {
     ProductListPage plp = new ProductListPage();
     BaseClass bc = new BaseClass();
     PaymentMethodsPage pmp = new PaymentMethodsPage();
+    AddressManagerPage amp = new AddressManagerPage();
 
     @Given("^the user navigates to the home page$")
     public void i_navigate_to_the_home_page() throws Throwable {
@@ -32,8 +34,6 @@ public class HomePageSteps {
         pmp.navigateToPaymentDetailsPg();
         pmp.deleteAllpayments();
     }
-
-
 
     @Then("^the user should see Search field with the text \"([^\"]*)\"$")
     public void verify_searchfield_text(String text) {
@@ -68,6 +68,17 @@ public class HomePageSteps {
         pdp.selectAnySize();
         pdp.selectStretchPay();
         pdp.addToBag();
+    }
+
+
+    @And("^the user selects a product quick view$")
+    public void selectProductQuickView(){
+        try{
+            plp.hoverOverThirdProduct();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }

@@ -21,7 +21,7 @@ public class QuickBuy extends BasePage{
 	
 	By chkboxMakeDefault = By.cssSelector("label[for='shipping']");
 	By btnSaveFutureOrders = By.id("submit-address-form");
-	
+	By lnksetDefaultPayment = By.cssSelector("a.edit-link.set-default-bill.set-quickbuy-mop");
 	
 	//By IconPlusSignAddNewPayment = By.className("icon icon-plus");bc.webelement(IconPlusSignAddNewPayment)
 	By linkAddNewPayment = By.id("payment-title");
@@ -40,7 +40,7 @@ public class QuickBuy extends BasePage{
 	By btnDelete = By.id("submit");
 	By btnCancel = By.xpath("//a[contains(text(),'Cancel')]");
 	By btnEditQuickBuyPrefereces = By.cssSelector("div.account-section.edit-quickbuy a");
-	
+	By lnkDefaultQBShippingAddress = By.cssSelector("a.edit-link.set-default-ship.set-quickbuy-ship-addr");
 	
 	
 	public int isQuickBuyElementsDisplayed() {
@@ -105,6 +105,23 @@ public class QuickBuy extends BasePage{
 		bc.WaitForElementPresent(btnEditQuickBuyPrefereces, 10);
 		bc.click(btnEditQuickBuyPrefereces);
 	}
+
+
+	public void setupDefaultQuickBuyAddress(){
+		if(bc.isDisplayed(lnkDefaultQBShippingAddress)){
+			bc.click(lnkDefaultQBShippingAddress);
+		}
+	}
+
+
+	public void setupDefaultQuickBuyPayment(){
+		if(bc.isDisplayed(lnksetDefaultPayment)){
+			bc.click(lnksetDefaultPayment);
+		}
+	}
+
+
+
 	
 	
 

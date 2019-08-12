@@ -12,7 +12,6 @@ public class ShoppingBagPage extends BasePage {
 
 
     By lnkContinueShopping = By.id("continue-shopping");
-    By txtShoppingBag = By.cssSelector("p.empty-message");
     By headingShoppingBag = By.cssSelector("div.cart-title h1");
     By btnCheckOutNow = By.id("checkout-now");
     By errMessage = By.cssSelector("div.alert-box.error p");
@@ -29,11 +28,8 @@ public class ShoppingBagPage extends BasePage {
         bc.click(lnkContinueShopping);
     }
 
-    public List<String> getHeadingAndMessage() {
-        List<String> ls = new ArrayList<String>();
-        ls.add(bc.getText(headingShoppingBag));
-        ls.add(bc.getText(txtShoppingBag));
-        return ls;
+    public String getHeadingAndMessage() {
+        return bc.getText(headingShoppingBag);
     }
 
     public Boolean isContinueShoppingLinkDisplayed() {
