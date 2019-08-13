@@ -3,11 +3,11 @@ Feature: Jtv Login
   As a Registered user he should be able to login into Jtv
 
 
-#Background:
+Background: User moving to login page
+  Given the user navigate to the Login page
 
   @smoke
   Scenario: User Logins with valid username and password
-    Given the user navigate to the Login page
     When the user login with following credentials
       | sedhu.madhavan@jtv.com | reliance |
     Then login should be successful

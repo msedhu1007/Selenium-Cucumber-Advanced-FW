@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.BaseClass;
+
 import java.util.List;
 
 public class PaymentMethodsPage extends BasePage{

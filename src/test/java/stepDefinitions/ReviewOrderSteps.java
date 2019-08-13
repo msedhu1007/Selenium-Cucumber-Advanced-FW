@@ -1,16 +1,14 @@
 package stepDefinitions;
 
-import cucumber.api.Scenario;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import io.cucumber.datatable.DataTable;
+import pageObjects.BillingPage;
 import pageObjects.ReviewOrderPage;
 import pageObjects.ShippingPage;
-import pageObjects.BillingPage;
 import pageObjects.ShoppingBagPage;
 
 import java.text.DecimalFormat;
-
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,6 +58,12 @@ public class ReviewOrderSteps {
         expectedTotalOrderDue += Double.parseDouble(ro.getStdDelivery());
         assertThat(df.format(expectedTotalOrderDue)).isEqualTo(ro.getTotalDueToday());
 
+    }
+
+
+    @Then("^Stretch Pay order should not go through successfully$")
+    public void stretchPayShouldNotGoThrough(){
+        assertThat(ro.getErrorMsg().contains("There is a problem with StretchPay™ on your account. Please contact Customer Service at (800) 550-8393")).isTrue();
     }
 
 }

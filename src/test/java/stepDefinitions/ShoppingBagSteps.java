@@ -23,7 +23,7 @@ public class ShoppingBagSteps {
 
     @And("^user should be displayed \"([^\"]*)\"$")
     public void verifyShoppingBagScreen(String message) {
-        assertThat(sbp.getHeadingAndMessage().get(1)).contains(message);
+        assertThat(sbp.getHeadingAndMessage()).contains(message);
     }
 
     @Then("^option to continue shopping$")

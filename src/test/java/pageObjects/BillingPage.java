@@ -41,7 +41,9 @@ public class BillingPage {
     BaseClass bc = new BaseClass();
 
     public void selectAddNewCreditDebit() {
-        bc.click(btnAddNewCard);
+        if(bc.webelement(btnAddNewCard).isEnabled()) {
+            bc.click(btnAddNewCard);
+        }
     }
 
 
@@ -141,20 +143,19 @@ public class BillingPage {
 
 
     public String getOrderDiscounts() {
-        if(bc.findAllElements(orderDiscounts).size()>0){
+        if (bc.findAllElements(orderDiscounts).size() > 0) {
             return bc.getText(orderDiscounts).trim().substring(1);
-        }
-        else{
+        } else {
             return "0";
         }
     }
 
 
-    public Boolean isJTVPreferredAccountDisplayed(){
-        if(bc.isDisplayed(eleJTVPreferredAccnt) && bc.isDisplayed(linkApplyjtvPreferredAccnt)){
+    public Boolean isJTVPreferredAccountDisplayed() throws Exception {
+        bc.sleep(3);
+        if (bc.findAllElements(eleJTVPreferredAccnt).size()>0 || bc.findAllElements(linkApplyjtvPreferredAccnt).size()>0) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

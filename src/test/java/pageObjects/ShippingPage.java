@@ -24,6 +24,7 @@ public class ShippingPage {
 	By btnEnterANewAddress = By.cssSelector("button.button.secondary.expand");
 	By rdoSuggestedAddress = By.cssSelector("input#suggested + label");
 	By rdoEnteredAddress = By.id("entered");
+	By txtErrorMessage = By.cssSelector("div.alert-box.error");
 
 	BaseClass bc = new BaseClass();
 	
@@ -42,7 +43,7 @@ public class ShippingPage {
 	}
 	
 	public void selectSuggestedAddress() {
-		bc.WaitForElementPresent(rdoSuggestedAddress, 20);
+		bc.WaitForElementPresent(rdoSuggestedAddress, 10);
 		bc.click(rdoSuggestedAddress);
 		bc.click(btnUseThisAddress);
 	}
@@ -60,18 +61,25 @@ public class ShippingPage {
 		bc.WaitForElementPresent(btnContinueBilling, 25);
 	}
 
+	public Boolean isOnlyStandardDeliveryDisplayed(){
+		if(bc.isDisplayed(chkboxStdDelivery) && !bc.isDisplayed(chkboxNextBusinessDay) && !bc.isDisplayed(chkbox2ndBusinessDay) && !bc.isDisplayed(chkbox3rdBusinessDay)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+
 	public void clickContinueToBilling(){
-	//	bc.click(btnContinueToBilling);
+		//	bc.click(btnContinueToBilling);
 		bc.click(btnContinueBilling);
 	}
 
-	public Boolean isOnlyStandardDeliveryDisplayed(){
-			if(bc.isDisplayed(chkboxStdDelivery) && !bc.isDisplayed(chkboxNextBusinessDay) && !bc.isDisplayed(chkbox2ndBusinessDay) && !bc.isDisplayed(chkbox3rdBusinessDay)){
-				return true;
-			}
-			else{
-				return false;
-			}
-	}
 
+
+
+	public String getErrorMsg(){
+		return bc.getText(txtErrorMessage);
+	}
 }

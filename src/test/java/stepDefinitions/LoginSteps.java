@@ -5,9 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
-import pageObjects.AccountHomePage;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
+import pageObjects.*;
 import utilities.BaseClass;
 
 import java.util.List;
@@ -19,8 +17,10 @@ public class LoginSteps {
 	LoginPage loginpage = new LoginPage();
 	BaseClass bc = new BaseClass();
 	AccountHomePage accountpage = new AccountHomePage();
-	
-
+	PaymentMethodsPage pmp = new PaymentMethodsPage();
+	AddressManagerPage amp = new AddressManagerPage();
+	AccountHomePage ahp = new AccountHomePage();
+	HomePage hp = new HomePage();
 	
 	@Given("^the user navigate to the Login page$")
 	public void i_navigate_to_the_Login_page() throws Throwable {
@@ -55,6 +55,16 @@ public class LoginSteps {
 		loginpage.login(list.get(0), list.get(1));
 	}
 
+
+	@And("^the user moves to the Home page$")
+	public void userMoveToHomePg() throws Exception{
+		hp.handleModal();
+		ahp.navigateToHomePage();
+		pmp.navigateToPaymentDetailsPg();
+		pmp.deleteAllpayments();
+		amp.navigatetoAddressMgr();
+		amp.deleteAllAddress();
+	}
 
 
 

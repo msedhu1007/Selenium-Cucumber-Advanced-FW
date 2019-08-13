@@ -9,6 +9,7 @@ import pageObjects.ReviewOrderPage;
 import utilities.BaseClass;
 
 import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -21,6 +22,11 @@ public class BillingSteps implements En{
 	//Lambda-steps inside Constructors
 	public BillingSteps() {
 	Then("user is taken to Secure Checkout page", () -> {
+			if(rop.isEditPreferenceDisplayed()){
+				rop.clickEditPrefDisplayed();
+			}
+
+
 			rop.getShippingAddress();
 			rop.getBillingAddress();
 			rop.getOrderTotal();
@@ -43,8 +49,8 @@ public class BillingSteps implements En{
 
 
 	@Then("^the user Preferred Account option is not available for user$")
-	public void preferredAccountOptionNotAvailableForUser(){
-		assertThat(bp.isJTVPreferredAccountDisplayed()).isTrue();
+	public void preferredAccountOptionNotAvailableForUser() throws Exception{
+		assertThat(bp.isJTVPreferredAccountDisplayed()).isFalse();
 	}
 
 }
