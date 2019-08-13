@@ -60,8 +60,25 @@ public class ShippingPage {
 	public void waitForShippingPageToOpen() {
 		bc.WaitForElementPresent(btnContinueBilling, 25);
 	}
-	
-	
+
+	public Boolean isOnlyStandardDeliveryDisplayed(){
+		if(bc.isDisplayed(chkboxStdDelivery) && !bc.isDisplayed(chkboxNextBusinessDay) && !bc.isDisplayed(chkbox2ndBusinessDay) && !bc.isDisplayed(chkbox3rdBusinessDay)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+
+	public void clickContinueToBilling(){
+		//	bc.click(btnContinueToBilling);
+		bc.click(btnContinueBilling);
+	}
+
+
+
+
 	public String getErrorMsg(){
 		return bc.getText(txtErrorMessage);
 	}
