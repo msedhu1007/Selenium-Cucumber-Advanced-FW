@@ -28,6 +28,8 @@ public class CreateAccountPage extends BasePage{
 		bc.SendKeys(txtConfirmPassword, confirmPassword);
 		bc.click(btnCreateAccount);
 	}
+
+
 	
 	public String getErrorMsg() {
 		bc.WaitForElementPresent(errormsg, 10);

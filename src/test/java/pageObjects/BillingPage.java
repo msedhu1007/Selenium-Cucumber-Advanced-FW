@@ -41,6 +41,7 @@ public class BillingPage {
     BaseClass bc = new BaseClass();
 
     public void selectAddNewCreditDebit() {
+        bc.WaitForElementPresent(btnAddNewCard, 25);
         if(bc.webelement(btnAddNewCard).isEnabled()) {
             bc.click(btnAddNewCard);
         }
@@ -82,7 +83,7 @@ public class BillingPage {
     }
 
 
-    public void fillCard(String name, String cardNo, String expMonth, String expYear, String cvv, Boolean defaultPaymentMethod, Boolean defaultQuickBuyPaymentMethod) throws Exception {
+    public void fillCard(String name, String cardNo, String expMonth, String expYear, String cvv) throws Exception {
         bc.WaitForElementPresent(txtName, 15);
         bc.setText(txtName, name);
         bc.setText(txtCardNo, cardNo);
@@ -158,6 +159,11 @@ public class BillingPage {
         } else {
             return false;
         }
+    }
+
+
+    public void waitForBillingPageToOpen(){
+        bc.WaitForElementPresent(btnAddNewCard,20);
     }
 
 }

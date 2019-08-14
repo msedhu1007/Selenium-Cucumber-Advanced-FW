@@ -38,11 +38,9 @@ public class ReviewOrderSteps {
     }
 
 
-    @And("^the user checkout with card details and places order$")
+    @And("^the user enters card details and places order$")
     public void checkoutAndEnterCardDetails(DataTable tblValues) throws Exception {
-        sbp.clickCheckOut();
         List<String> list = tblValues.asList(String.class);
-        sp.clickContinueToBilling();
         bp.enterCVVIfEnabled(list.get(0), list.get(1), list.get(2), list.get(3), list.get(4), false, false);
         bp.reviewOrder();
         ro.placeOrder();

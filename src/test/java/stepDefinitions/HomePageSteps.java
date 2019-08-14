@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -8,6 +9,8 @@ import pageObjects.*;
 import utilities.BaseClass;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
 
 public class HomePageSteps {
 
@@ -18,6 +21,9 @@ public class HomePageSteps {
     BaseClass bc = new BaseClass();
     PaymentMethodsPage pmp = new PaymentMethodsPage();
     AddressManagerPage amp = new AddressManagerPage();
+    SearchResultsPage searchPage = new SearchResultsPage();
+    ShoppingBagPage sbp = new ShoppingBagPage();
+
 
     @Given("^the user navigates to the home page$")
     public void i_navigate_to_the_home_page() throws Throwable {
@@ -33,6 +39,14 @@ public class HomePageSteps {
         ahp.navigateToHomePage();
         pmp.navigateToPaymentDetailsPg();
         pmp.deleteAllpayments();
+        amp.navigatetoAddressMgr();
+        amp.deleteAllAddress();
+        sbp.navigateToShoppingBagPage();
+        sbp.waitforPageToOpen();
+        int n = sbp.getNoOfItems();
+        while (!sbp.isBagEmpty()) {
+            sbp.removeItem();
+        }
     }
 
     @Then("^the user should see Search field with the text \"([^\"]*)\"$")
@@ -60,7 +74,7 @@ public class HomePageSteps {
 
     @And("^the user selects a Stretch pay item and Adds to Bag$")
     public void selectStretchPayItem() throws Exception {
-        hp.handleModal();
+      //  hp.handleModal();
         hp.selectJewelryTypes("Necklaces");
         bc.sleep(3);
         hp.clickStretchPay();
@@ -72,13 +86,24 @@ public class HomePageSteps {
 
 
     @And("^the user selects a product quick view$")
-    public void selectProductQuickView(){
-        try{
+    public void selectProductQuickView() {
+        try {
             plp.hoverOverThirdProduct();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    @And("^the user selects a bulky item \"([^\"]*)\" and Adds to bag$")
+    public void addBulkyItemToBag(String product) {
+        hp.handleModal();
+        searchPage.searchItems(product);
+        pdp.waitForPageToLoad();
+        pdp.addToBag();
+        pdp.hoverOverBag();
+        pdp.clickBag();
+        sbp.clickCheckOut();
     }
 
 }

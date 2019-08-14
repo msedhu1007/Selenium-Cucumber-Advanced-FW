@@ -43,7 +43,7 @@ public class ShippingPage {
 	}
 	
 	public void selectSuggestedAddress() {
-		bc.WaitForElementPresent(rdoSuggestedAddress, 10);
+		bc.WaitForElementPresent(rdoSuggestedAddress, 25);
 		bc.click(rdoSuggestedAddress);
 		bc.click(btnUseThisAddress);
 	}
