@@ -16,7 +16,7 @@ public class ProductDetailsPage extends BasePage{
 
 	
 	public void addToBag() {
-		bc.WaitForElementPresent(btnAddToBag, 15);
+		bc.WaitForElementPresent(btnAddToBag, 20);
 		bc.JSClick(btnAddToBag);
 	}
 	
@@ -30,6 +30,11 @@ public class ProductDetailsPage extends BasePage{
 			bc.JSClick(eleRingSize);
 		}
 
+	}
+
+
+	public void waitForPageToLoad(){
+		bc.WaitForElementPresent(btnAddToBag,25);
 	}
 
 

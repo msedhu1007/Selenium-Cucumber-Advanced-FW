@@ -202,7 +202,6 @@ public class BaseClass {
         try {
             WebDriverWait newWait = new WebDriverWait(driver, 20);
             newWait.until(ExpectedConditions.elementToBeClickable(objname)).click();
-            ;
             reportInfo("clicked on element " + objname);
         } catch (Exception e) {
             reportFail("Clicked on element by " + objname);

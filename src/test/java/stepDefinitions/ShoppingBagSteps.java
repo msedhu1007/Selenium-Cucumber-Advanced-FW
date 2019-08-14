@@ -31,6 +31,15 @@ public class ShoppingBagSteps {
         assertThat(sbp.isContinueShoppingLinkDisplayed()).as("Continue Shopping link ").isTrue();
     }
 
+    @And("^user navigates to Shopping bag screen and checksout$")
+    public void navigateShoppingCheckout(){
+        sbp.navigateToShoppingBagPage();
+        sbp.waitforPageToOpen();
+        sbp.clickCheckOut();
+    }
+
+
+
 
     @Then("^the user is informed to sign in to proceed with StretchPay$")
     public void userInformedToSign() {

@@ -14,7 +14,7 @@ import java.io.IOException;
 @CucumberOptions(  
 		plugin = {"pretty","json:target/cucumber.json","html:target/cucumber-html-default","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},  
 		strict = true,  
-		tags = "@login , @quickbuy, @searchpage, @createAccount, ~@ignore",
+		tags = "@smoke, ~@ignore",
 		features = {"classpath:features"},  
 		glue = {"stepDefinitions"}  
 		)  

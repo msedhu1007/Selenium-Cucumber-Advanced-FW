@@ -25,8 +25,6 @@ public class BillingSteps implements En{
 			if(rop.isEditPreferenceDisplayed()){
 				rop.clickEditPrefDisplayed();
 			}
-
-
 			rop.getShippingAddress();
 			rop.getBillingAddress();
 			rop.getOrderTotal();
@@ -36,12 +34,20 @@ public class BillingSteps implements En{
 		Then("quickbuy order should be placed successfully", () -> {
 		rop.placeOrder();
 		});
-	}
+
+
+		When("user pays with credit card details and places order", (io.cucumber.datatable.DataTable tblValues) -> {
+			List<String> lst = tblValues.asList();
+			bp.fillCard(lst.get(0), lst.get(1), lst.get(2), lst.get(3), lst.get(4));
+			bp.reviewOrder();
+			rop.placeOrder();
+		});
+		}
 
 	@And("^the user enters payment information and email$")
 	public void userFillsCardInfo(DataTable tblvalues) throws Exception{
 		List<String> list = tblvalues.asList();
-		bp.fillCard(list.get(0), list.get(1), list.get(2), list.get(3), list.get(4), true, true);
+		bp.fillCard(list.get(0), list.get(1), list.get(2), list.get(3), list.get(4));
 		bp.selectSameAsShippingAddressFillEmail(list.get(5));
 		bp.reviewOrder();
 

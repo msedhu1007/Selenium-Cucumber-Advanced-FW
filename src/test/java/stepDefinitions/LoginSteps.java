@@ -1,16 +1,12 @@
 package stepDefinitions;
-
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.en.*;
 import io.cucumber.datatable.DataTable;
 import pageObjects.*;
 import utilities.BaseClass;
 
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class LoginSteps {
 	HomePage homepage = new HomePage();
@@ -65,6 +61,7 @@ public class LoginSteps {
 		amp.navigatetoAddressMgr();
 		amp.deleteAllAddress();
 	}
+
 
 
 

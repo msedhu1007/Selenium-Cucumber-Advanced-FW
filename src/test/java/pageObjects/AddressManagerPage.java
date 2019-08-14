@@ -48,18 +48,28 @@ public class AddressManagerPage extends BasePage{
             lst.get(0).click();
             bc.click(btnDeleteAddress);
             bc.click(btnDelete);
-            bc.sleep(5);
+            bc.waitForElementToDisappear(btnDelete);
+            bc.WaitForElementPresent(linkAddNewAddress, 20);
         }
         if(bc.findAllElements(linkEditAddress).size()>0){
             bc.findAllElements(linkEditAddress).get(0).click();
             bc.click(btnDeleteAddress);
             bc.click(btnDelete);
+            bc.waitForElementToDisappear(btnDelete);
+            bc.WaitForElementPresent(linkAddNewAddress, 20);
         }
-
+        if(bc.findAllElements(linkEditAddress).size()>0){
+            bc.findAllElements(linkEditAddress).get(0).click();
+            bc.click(btnDeleteAddress);
+            bc.click(btnDelete);
+            bc.waitForElementToDisappear(btnDelete);
+            bc.WaitForElementPresent(linkAddNewAddress, 20);
+        }
     }
 
 
     public void navigatetoAddressMgr() {
         bc.click(lnkMenuItem);
+        bc.WaitForElementPresent(linkAddNewAddress,20);
     }
 }
